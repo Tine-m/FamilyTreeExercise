@@ -32,7 +32,15 @@ public class FamilyTree {
     public String lookUpParentName(String parent) {
         if (parent.equals("mother")) {
             return current.getMother().getName();
+        } else return current.getFather().getName();
+    }
+
+    public void moveToAncestor(String ancestor) {
+        if (ancestor.equals("mother")) {
+            current = current.getMother();
         }
-        else return current.getFather().getName();
+        else {
+            current = current.getFather();
+        }
     }
 }
